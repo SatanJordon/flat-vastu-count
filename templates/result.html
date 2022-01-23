@@ -33,7 +33,7 @@
             <tbody>
             {% for k, v in content.items() %}
             {% if "None" not in v %}
-            {% if v.split("|")[1] < '5' %}
+            {% if v.split("|")[1]|int < 5 %}
             <tr class="table-warning">
                 <td>{{ k }}</td>
                <td>{{ v.split("|")[0] }}</td>
