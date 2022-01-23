@@ -18,7 +18,10 @@
                 </p>
             </div>
         </div>
+        {% if address != '' %}
+        <span>Address :</span>
         <p class="h4">{{ address }}</p>
+        {% endif %}
         <table class="table">
             <thead class="thead-dark">
               <tr>
@@ -30,11 +33,19 @@
             <tbody>
             {% for k, v in content.items() %}
             {% if "None" not in v %}
+            {% if v.split("|")[1] < '5' %}
+            <tr class="table-warning">
+                <td>{{ k }}</td>
+               <td>{{ v.split("|")[0] }}</td>
+               <td>{{ v.split("|")[1] }}</td>
+             </tr>
+            {% else %}
               <tr>
                  <td>{{ k }}</td>
                 <td>{{ v.split("|")[0] }}</td>
                 <td>{{ v.split("|")[1] }}</td>
               </tr>
+              {% endif %}
             {% endif %}
             {% endfor %}
             </tbody>
@@ -44,7 +55,7 @@
 
     <div class="container mb-3">
         <p class="lead">Total : {{ total }}</p>
-        <p class="lead">Percentage : {{ percentage }} </p>
+        <p class="lead">Percentage : {{ percentage }}% </p>
         <p class="lead">Element Present : {{ length }} </p>
     </div>
 

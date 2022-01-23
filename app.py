@@ -85,7 +85,7 @@ def home():
             "result.html",
             content=content,
             total=total,
-            percentage=percentage,
+            percentage=round(percentage),
             length=length,
             address=address,
         )
@@ -107,4 +107,4 @@ def calc_points(*args):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=7000)
+    app.run()
