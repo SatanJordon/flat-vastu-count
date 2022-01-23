@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <title>Vastu</title>
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        - <strong>Error : </strong> {{ message }}.
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <form action="/" method="POST">
+        <div class="form-group">
+            <div class="container">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Vastu Counter</h1>
+                        <p class="lead">
+                            This is a simple application for vastu flat points counter
+                        </p>
+                    </div>
+                </div>
+                <label for="formGroupExampleInput" class="form-label">Address</label>
+                    <input class="form-control" name="address" type="text" placeholder="Enter Address" />
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Kitchen</label>
+                    <input class="form-control" list="directions" name="kitchen" placeholder="Choose directions" />
+                    <datalist id="directions">
+                        <option value="North"></option>
+                        <option value="East"></option>
+                        <option value="South"></option>
+                        <option value="West"></option>
+                        <option value="North-East"></option>
+                        <option value="North-West"></option>
+                        <option value="South-East"></option>
+                        <option value="South-West"></option>
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Master Bedroom</label>
+                    <input class="form-control" list="directions" name="master_bedroom"
+                        placeholder="Choose directions" />
+                    <datalist id="directions">
+                        <option value="North"></option>
+                        <option value="East"></option>
+                        <option value="South"></option>
+                        <option value="West"></option>
+                        <option value="North-East"></option>
+                        <option value="North-West"></option>
+                        <option value="South-East"></option>
+                        <option value="South-West"></option>
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Bathroom</label>
+                    <input class="form-control" list="directions" name="bathroom" placeholder="Choose directions" />
+                    <datalist id="directions">
+                        <option value="North"></option>
+                        <option value="East"></option>
+                        <option value="South"></option>
+                        <option value="West"></option>
+                        <option value="North-East"></option>
+                        <option value="North-West"></option>
+                        <option value="South-East"></option>
+                        <option value="South-West"></option>
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Main Gate</label>
+                    <input class="form-control" list="directions" name="main_gate" placeholder="Choose directions" />
+                    <datalist id="directions">
+                        <option value="North"></option>
+                        <option value="East"></option>
+                        <option value="South"></option>
+                        <option value="West"></option>
+                        <option value="North-East"></option>
+                        <option value="North-West"></option>
+                        <option value="South-East"></option>
+                        <option value="South-West"></option>
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Electricity and Generator</label>
+                    <input class="form-control" list="directions" name="electricity_and_generator" placeholder="Choose directions" />
+                    <datalist id="directions">
+                        <option value="North"></option>
+                        <option value="East"></option>
+                        <option value="South"></option>
+                        <option value="West"></option>
+                        <option value="North-East"></option>
+                        <option value="North-West"></option>
+                        <option value="South-East"></option>
+                        <option value="South-West"></option>
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Water Supply</label>
+                    <input class="form-control" list="directions" name="water_supply" placeholder="Choose directions" />
+                    <datalist id="directions">
+                        <option value="North"></option>
+                        <option value="East"></option>
+                        <option value="South"></option>
+                        <option value="West"></option>
+                        <option value="North-East"></option>
+                        <option value="North-West"></option>
+                        <option value="South-East"></option>
+                        <option value="South-West"></option>
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Stairs and Lift</label>
+                    <input class="form-control" list="directions" name="stairs_and_lift" placeholder="Choose directions" />
+                    <datalist id="directions">
+                        <option value="North"></option>
+                        <option value="East"></option>
+                        <option value="South"></option>
+                        <option value="West"></option>
+                        <option value="North-East"></option>
+                        <option value="North-West"></option>
+                        <option value="South-East"></option>
+                        <option value="South-West"></option>
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Garden open area</label>
+                    <input class="form-control" list="directions" name="garden_open_area" placeholder="Choose directions" />
+                    <datalist id="directions">
+                        <option value="North"></option>
+                        <option value="East"></option>
+                        <option value="South"></option>
+                        <option value="West"></option>
+                        <option value="North-East"></option>
+                        <option value="North-West"></option>
+                        <option value="South-East"></option>
+                        <option value="South-West"></option>
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Drawing Dinning Living room</label>
+                    <input class="form-control" list="directions" name="drawing_dinning_living_room" placeholder="Choose directions" />
+                    <datalist id="directions">
+                        <option value="North"></option>
+                        <option value="East"></option>
+                        <option value="South"></option>
+                        <option value="West"></option>
+                        <option value="North-East"></option>
+                        <option value="North-West"></option>
+                        <option value="South-East"></option>
+                        <option value="South-West"></option>
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Children's Bedroom</label>
+                    <input class="form-control" list="directions" name="children_bedroom" placeholder="Choose directions" />
+                    <datalist id="directions">
+                        <option value="North"></option>
+                        <option value="East"></option>
+                        <option value="South"></option>
+                        <option value="West"></option>
+                        <option value="North-East"></option>
+                        <option value="North-West"></option>
+                        <option value="South-East"></option>
+                        <option value="South-West"></option>
+                    </datalist>
+                </div>
+                <button type="submit" name="submit" id="submit" type="button" class="btn btn-outline-primary">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">Created by Sayan Chakraborty © 2022</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
