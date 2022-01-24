@@ -1,4 +1,4 @@
-from flask import Flask, render_template, flash, request, redirect
+from flask import Flask, render_template, request
 from directions import direction_dict
 
 app = Flask(__name__)
